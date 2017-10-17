@@ -13,11 +13,11 @@ class Pose:
     # nacitani siti
     # todo: natvrdo napsane cesty nahradit nacitanim z nejakeho config souboru
     for fnameModel, fnameParams in [
-      ["openpose/models/face/pose_deploy.prototxt", "models/face/pose_iter_116000.caffemodel"],
-      ["openpose/models/hand/pose_deploy.prototxt", "models/hand/pose_iter_102000.caffemodel"],
-      ["openpose/models/pose/coco/pose_deploy_linevec.prototxt", "models/pose/coco/pose_iter_440000.caffemodel"],
-      ["openpose/models/pose/mpi/pose_deploy_linevec.prototxt", "models/pose/mpi/pose_iter_160000.caffemodel"],
-      ["openpose/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt", "models/pose/mpi/pose_iter_160000.caffemodel"],
+      ["openpose/models/face/pose_deploy.prototxt", "openpose/models/face/pose_iter_116000.caffemodel"],
+      ["openpose/models/hand/pose_deploy.prototxt", "openpose/models/hand/pose_iter_102000.caffemodel"],
+      ["openpose/models/pose/coco/pose_deploy_linevec.prototxt", "openpose/models/pose/coco/pose_iter_440000.caffemodel"],
+      ["openpose/models/pose/mpi/pose_deploy_linevec.prototxt", "openpose/models/pose/mpi/pose_iter_160000.caffemodel"],
+      ["openpose/models/pose/mpi/pose_deploy_linevec_faster_4_stages.prototxt", "openpose/models/pose/mpi/pose_iter_160000.caffemodel"],
     ]:
       net = caffe.Net(fnameModel, fnameParams, caffe.TEST)
       self.nets.append(net)
